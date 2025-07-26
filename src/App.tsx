@@ -11,7 +11,7 @@ interface Employee {
   hireDate: string;
 }
 
-const API_URL = 'https://student-info-2-yltgce2minsyx1fw0ma1c6mz.preview.sursakit.com/students'; // Using same API for now
+const API_URL = 'https://employee-info-api-oc4vufbr3vhsb2dwqchm9upm.ide.127-0-0-1.sslip.io/employees'; // Using same API for now; // Using same API for now
 
 function App() {
   const [employees, setEmployees] = useState<Employee[]>([]);
@@ -41,12 +41,12 @@ function App() {
       // Transform API data to employee format
       const transformedData = data.map((employee: any) => ({
         id: employee?.id,
-        name: employee?.name,
-        email: employee?.email,
+        name: employee?.name || 'Unknown',
+        email: employee?.email || 'No email',
         position: employee?.position || 'Not Specified',
         department: employee?.department || 'Not Assigned',
         salary: employee?.salary || 0,
-        hireDate: employee?.hireDate || 'Not Available'
+        hireDate: employee?.hireDate ? new Date(employee.hireDate).toISOString().split('T')[0] : 'Not Available'
       }));
       setEmployees(transformedData);
     } catch (err: any) {
@@ -74,7 +74,14 @@ function App() {
       });
     } else {
       setEditEmployee(null);
-      setForm({ name: '', email: '', position: '', department: '', salary: '', hireDate: '' });
+      setForm({ 
+        name: '', 
+        email: '', 
+        position: '', 
+        department: '', 
+        salary: '', 
+        hireDate: new Date().toISOString().split('T')[0] // Set today's date as default
+      });
     }
     setModalOpen(true);
   };
@@ -83,7 +90,14 @@ function App() {
   const closeModal = () => {
     setModalOpen(false);
     setEditEmployee(null);
-    setForm({ name: '', email: '', position: '', department: '', salary: '', hireDate: '' });
+    setForm({ 
+      name: '', 
+      email: '', 
+      position: '', 
+      department: '', 
+      salary: '', 
+      hireDate: new Date().toISOString().split('T')[0] 
+    });
   };
 
   // Handle form change
@@ -100,7 +114,10 @@ function App() {
       const payload = {
         name: form.name,
         email: form.email,
-        age: 25, // Default age for API compatibility
+        position: form.position,
+        department: form.department,
+        salary: parseFloat(form.salary),
+        hireDate: form.hireDate
       };
       let res;
       if (editEmployee) {
@@ -116,7 +133,10 @@ function App() {
           body: JSON.stringify(payload),
         });
       }
-      if (!res.ok) throw new Error('Failed to save employee');
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || 'Failed to save employee');
+      }
       closeModal();
       fetchEmployees();
     } catch (err: any) {
@@ -220,10 +240,10 @@ function App() {
                     <tr>
                       <th className="px-8 py-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Employee</th>
                       <th className="px-8 py-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Contact</th>
-                      <th className="px-8 py-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Role</th>
+                      <th className="px-8 py-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Position</th>
                       <th className="px-8 py-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Department</th>
-                      <th className="px-8 py-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Compensation</th>
-                      <th className="px-8 py-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Tenure</th>
+                      <th className="px-8 py-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Salary</th>
+                      <th className="px-8 py-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Hire Date</th>
                       <th className="px-8 py-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
                     </tr>
                   </thead>
