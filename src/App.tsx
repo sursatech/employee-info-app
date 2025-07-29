@@ -11,7 +11,7 @@ interface Employee {
   hireDate: string;
 }
 
-const API_URL = 'https://employee-info-api-oc4vufbr3vhsb2dwqchm9upm.ide.127-0-0-1.sslip.io/employees'; // Using same API for now; // Using same API for now
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/employees';
 
 function App() {
   const [employees, setEmployees] = useState<Employee[]>([]);
