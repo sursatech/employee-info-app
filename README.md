@@ -1,4 +1,4 @@
-# Employee Management System
+# EMPLOYEE MANAGEMENT SYSTEM
 
 A modern React app for managing employee information with TypeScript and Tailwind CSS.
 
