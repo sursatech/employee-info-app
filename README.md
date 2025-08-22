@@ -1,5 +1,5 @@
 # EMPLOYEE MANAGEMENT SYSTEM
-# from sursakit
+# from codebase
 
 A modern React app for managing employee information with TypeScript and Tailwind CSS.
 
