@@ -1,5 +1,4 @@
 # EMPLOYEE MANAGEMENT SYSTEM
-# from sursakit.com
 
 ** A modern React app for managing employee information with TypeScript and Tailwind CSS**
 ## Quick Setup
