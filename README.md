@@ -1,5 +1,5 @@
 # EMPLOYEE MANAGEMENT SYSTEM
-# from codebase
+# from codespaces
 
 ** A modern React app for managing employee information with TypeScript and Tailwind CSS**
 ## Quick Setup
