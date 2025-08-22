@@ -1,8 +1,7 @@
 # EMPLOYEE MANAGEMENT SYSTEM
 # from codebase
 
-A modern React app for managing employee information with TypeScript and Tailwind CSS.
-
+** A modern React app for managing employee information with TypeScript and Tailwind CSS**
 ## Quick Setup
 
 1. **Install dependencies**
