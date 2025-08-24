@@ -173,7 +173,7 @@ function App() {
             Employee Management
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Streamline your workforce management with our modern employee tracking system
+            Streamline your workforce management with our modern employee tracking system.
           </p>
         </div>
 
