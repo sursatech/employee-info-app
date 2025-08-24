@@ -1,4 +1,5 @@
 # EMPLOYEE MANAGEMENT SYSTEM
+![Employee Management System](https://github.com/sursakit/employee-management-system/blob/main/public/employee-management-system.png)
 
 ** A modern React app for managing employee information with TypeScript and Tailwind CSS**
 ## Quick Setup
@@ -38,4 +39,4 @@ The app expects a REST API with these endpoints:
 ---
 
 Built with React, TypeScript & Tailwind CSS • Powered by [Sursakit](https://sursakit.com)
-This is from Main 
+This is from Main
