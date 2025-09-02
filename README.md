@@ -35,10 +35,6 @@ The app expects a REST API with these endpoints:
 - `npm start` - Development server
 - `npm test` - Run tests
 - `npm run build` - Build for production
-
-  This is from github
-
 ---
 
 Built with React, TypeScript & Tailwind CSS • Powered by [Sursakit](https://sursakit.com)
-Resolve CONFLICT
