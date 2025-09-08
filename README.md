@@ -6,7 +6,7 @@
 
 1. **Install dependencies**
    ```bash
-   npm install
+   npm i
    ```
 
 2. **Configure environment**
