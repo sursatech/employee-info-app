@@ -11,7 +11,7 @@ interface Employee {
   hireDate: string;
 }
 
-const API_URL = (process.env.API_URL || 'http://localhost:3001') + "/employees";
+const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:3001') + "/employees";
 
 function App() {
   const [employees, setEmployees] = useState<Employee[]>([]);
@@ -170,7 +170,7 @@ function App() {
             </svg>
           </div>
           <h1 className="text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent mb-4">
-            Employee Management
+            Employee Management1
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Streamline your workforce management with our modern employee tracking system.
