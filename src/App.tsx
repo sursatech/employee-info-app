@@ -11,7 +11,7 @@ interface Employee {
   hireDate: string;
 }
 
-const API_URL = process.env.API_URL+"/employees" || 'http://localhost:3001/employees';
+const API_URL = (process.env.API_URL || 'http://localhost:3001') + "/employees";
 
 function App() {
   const [employees, setEmployees] = useState<Employee[]>([]);
