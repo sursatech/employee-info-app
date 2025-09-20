@@ -12,7 +12,7 @@
 2. **Configure environment**
    Create a `.env` file:
    ```env
-   REACT_APP_API_URL=https://your-api-endpoint.com/employees
+   API_URL=https://your-api-endpoint.com/employees
    ```
 
 3. **Start the app**
