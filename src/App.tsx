@@ -493,9 +493,9 @@ function App() {
           </div>
         </div>
       )}
-      {/* Powered by Sursakit Footer */}
+      {/* Powered by humafu, Inc. Footer */}
       <footer className="w-full text-center py-6 mt-12 text-gray-500 text-sm opacity-80">
-        Powered by <a href="https://sursakit.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 font-semibold hover:underline">Sursakit</a>
+        Powered by <a href="https://humafu.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 font-semibold hover:underline"></a>
       </footer>
     </div>
   );
