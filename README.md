@@ -1,4 +1,4 @@
-# EMPLOYEE MANAGEMENT SYSTEM
+# EMPLOYEE MANAGEMENT SYSTEMs
 
 **A modern React app for managing employee information with TypeScript, Tailwind CSS, and Vite**
 
